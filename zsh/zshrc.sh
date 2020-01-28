@@ -1,7 +1,7 @@
 # Vars
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
+	SAVEHIST=1000
+	setopt inc_append_history # To save every command before it is executed
 	setopt share_history # setopt inc_append_history
 
 	git config --global push.default current
@@ -21,7 +21,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 #Functions
 	# Loop a command and show the output in vim
 	loop() {
-		echo ":cq to quit\n" > /tmp/log/output 
+		echo ":cq to quit\n" > /tmp/log/output
 		fc -ln -1 > /tmp/log/program
 		while true; do
 			cat /tmp/log/program >> /tmp/log/output ;
@@ -35,7 +35,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 # Custom cd
 chpwd() ls
 
-# For vim mappings: 
+# For vim mappings:
 	stty -ixon
 
 # Completions
@@ -80,3 +80,5 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 export PATH=$PATH:$HOME/dotfiles/utils
+export PATH=$PATH:/usr/local/bin
+[ -z $TMUX ] && exec tmux
